@@ -1,25 +1,94 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import PokemonRow from './components/PokemonRow'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const pokemons = [
+  {
+    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+    name: "Charizard",
+    type: "Fire",
+    isFavorite: true
+  },
+  {
+    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+    name: "Charizard",
+    type: "Fire",
+    isFavorite: true
+  },
+  {
+    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+    name: "Charizard",
+    type: "Fire",
+    isFavorite: true
+  },
+  {
+    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+    name: "Charizard",
+    type: "Fire",
+    isFavorite: true
+  },
+  {
+    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+    name: "Charizard",
+    type: "Fire",
+    isFavorite: true
+  },
+  {
+    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+    name: "Charizard",
+    type: "Fire",
+    isFavorite: true
+  },
+  {
+    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+    name: "Charizard",
+    type: "Fire",
+    isFavorite: true
+  },
+  {
+    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+    name: "Charizard",
+    type: "Fire",
+    isFavorite: true
+  },
+  {
+    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+    name: "Charizard",
+    type: "Fire",
+    isFavorite: true
+  },
+  {
+    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+    name: "Charizard",
+    type: "Fire",
+    isFavorite: true
+  },
+  {
+    image: "pepe.png",
+    name: "Pepe",
+    type: "Water",
+    isFavorite: false
+  }
+]
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>Pokemon App Hi!</h1>
+        <>{pokemons.map((pokemon , index) => (
+           <PokemonRow
+            key={index}
+            pokemonImage={pokemon.image}
+            pokemonName={pokemon.name}
+            pokemonType={pokemon.type}
+            pokemonIsFavourite={pokemon.isFavorite}
+          />
+        ))}
+        </>
+      </div>
+    );
+  }
 }
 
 export default App;
