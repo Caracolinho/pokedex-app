@@ -38,11 +38,11 @@
 
 .PokemonRow{
     border: grey 1px solid ;
-    margin: 1%;
-    height: 250px;  
+    height: 276px; 
+    width: 153px; 
 }
 
-img{
+.PokemonImage{
    max-width: 150px;
    max-height: 100px;
    scale: 80%;

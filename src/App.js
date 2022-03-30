@@ -8,13 +8,13 @@ const pokemons = [
     name: "Charizard",
     type: "Fire",
     isFavorite: true
-  },
-  {
-    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-    name: "Charizard",
-    type: "Fire",
-    isFavorite: true
   }
+  // {
+  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+  //   name: "Charizard",
+  //   type: "Fire",
+  //   isFavorite: true
+  // }
   // {
   //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
   //   name: "Charizard",
