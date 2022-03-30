@@ -5,58 +5,11 @@ import './App.css';
 const pokemons = [
   {
     image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-    name: "Charizard",
-    type: "Fire",
+    name: "Bulbasaur",
+    type: "Grass, Poison",
     isFavorite: true
   }
-  // {
-  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-  //   name: "Charizard",
-  //   type: "Fire",
-  //   isFavorite: true
-  // }
-  // {
-  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-  //   name: "Charizard",
-  //   type: "Fire",
-  //   isFavorite: true
-  // },
-  // {
-  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-  //   name: "Charizard",
-  //   type: "Fire",
-  //   isFavorite: true
-  // },
-  // {
-  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-  //   name: "Charizard",
-  //   type: "Fire",
-  //   isFavorite: true
-  // },
-  // {
-  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-  //   name: "Charizard",
-  //   type: "Fire",
-  //   isFavorite: true
-  // },
-  // {
-  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-  //   name: "Charizard",
-  //   type: "Fire",
-  //   isFavorite: true
-  // },
-  // {
-  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-  //   name: "Charizard",
-  //   type: "Fire",
-  //   isFavorite: true
-  // },
-  // {
-  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-  //   name: "Charizard",
-  //   type: "Fire",
-  //   isFavorite: true
-  // }
+ 
 ]
 
 class App extends Component {
@@ -65,7 +18,7 @@ class App extends Component {
       <div className="App">
         <div className="Pokemons">
         <>{pokemons.map((pokemon , index) => (
-           <Pokemon
+           <Pokemon 
             key={index}
             image={pokemon.image}
             name={pokemon.name}

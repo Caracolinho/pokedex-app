@@ -1,5 +1,5 @@
 .PokemonRow{
-    border: grey 1px solid ;
+    border: lightgrey 1px solid ;
     height: 276px; 
     width: 153px; 
     display: inline-block;
@@ -13,7 +13,23 @@
    margin-right: 10px;
 }
 .cardFotter{
-    background: lightgray; 
-    
+    background: rgb(241, 241, 241); 
+    display: table-cell;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    vertical-align: bottom;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+.textName{
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.textType{
+    font-size: 15.6px;
 }
 
