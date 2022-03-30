@@ -4,9 +4,7 @@ import './Pokemon.css'
 const Pokemon = ({image , name , type , isFavourite}) => {
  
     return(<div className="PokemonRow">
-       <div className="cardImage">
-       <img src ={image}/>
-       </div>
+       <img  className="PokemonImage" src ={image}/>
        <div className="cardFotter">
            <h4>{name}</h4>
            <p>{type}</p>
