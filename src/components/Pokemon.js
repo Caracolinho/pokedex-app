@@ -6,8 +6,8 @@ const Pokemon = ({image , name , type , isFavourite}) => {
     return(<div className="PokemonRow">
        <img  className="PokemonImage" src ={image}/>
        <div className="cardFotter">
-           <p className="textName">{name}</p>
-           <p className="textType">{type}</p>
+           <div className="textName">{name}</div>
+           <div className="textType">{type}</div>
            {/* <p>{isFavourite.toString()}</p> */}
        </div> 
     </div>)
