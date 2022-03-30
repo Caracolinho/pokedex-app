@@ -1,4 +1,4 @@
-.PokemonRow{
+/* .PokemonRow{
     display: flex;
     flex-direction: column;
     width: clamp(10rem, calc(10rem + 2vw), 15rem);
@@ -18,7 +18,8 @@
 
 
 .cardFotter{
-    padding: 1rem;
+    display: block;
+    padding: 5%;
     display: flex;
     flex-direction: column;
     margin-top: auto;
@@ -30,3 +31,35 @@
     font-size: 1.5rem;
     text-transform: capitalize; 
 }
+
+.p{
+    padding-top: 1px
+} */
+
+.PokemonRow{
+    border: grey 1px solid ;
+    margin: 1%;
+    height: 250px;  
+}
+
+img{
+   max-width: 150px;
+   max-height: 100px;
+   scale: 80%;
+}
+.cardFotter{
+    background: lightgray;
+    padding: 1px;
+    height:80px;   
+}
+
+p{
+
+    padding-left: 10px;
+
+}
+
+h4{
+    padding-left: 10px;
+}
+

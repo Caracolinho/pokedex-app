@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PokemonRow from './components/PokemonRow'
+import Pokemon from './components/Pokemon'
 import './App.css';
 
 const pokemons = [
@@ -14,78 +14,67 @@ const pokemons = [
     name: "Charizard",
     type: "Fire",
     isFavorite: true
-  },
-  {
-    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-    name: "Charizard",
-    type: "Fire",
-    isFavorite: true
-  },
-  {
-    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-    name: "Charizard",
-    type: "Fire",
-    isFavorite: true
-  },
-  {
-    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-    name: "Charizard",
-    type: "Fire",
-    isFavorite: true
-  },
-  {
-    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-    name: "Charizard",
-    type: "Fire",
-    isFavorite: true
-  },
-  {
-    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-    name: "Charizard",
-    type: "Fire",
-    isFavorite: true
-  },
-  {
-    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-    name: "Charizard",
-    type: "Fire",
-    isFavorite: true
-  },
-  {
-    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-    name: "Charizard",
-    type: "Fire",
-    isFavorite: true
-  },
-  {
-    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-    name: "Charizard",
-    type: "Fire",
-    isFavorite: true
-  },
-  {
-    image: "pepe.png",
-    name: "Pepe",
-    type: "Water",
-    isFavorite: false
   }
+  // {
+  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+  //   name: "Charizard",
+  //   type: "Fire",
+  //   isFavorite: true
+  // },
+  // {
+  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+  //   name: "Charizard",
+  //   type: "Fire",
+  //   isFavorite: true
+  // },
+  // {
+  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+  //   name: "Charizard",
+  //   type: "Fire",
+  //   isFavorite: true
+  // },
+  // {
+  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+  //   name: "Charizard",
+  //   type: "Fire",
+  //   isFavorite: true
+  // },
+  // {
+  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+  //   name: "Charizard",
+  //   type: "Fire",
+  //   isFavorite: true
+  // },
+  // {
+  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+  //   name: "Charizard",
+  //   type: "Fire",
+  //   isFavorite: true
+  // },
+  // {
+  //   image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+  //   name: "Charizard",
+  //   type: "Fire",
+  //   isFavorite: true
+  // }
 ]
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Pokemon App Hi!</h1>
+        <div className="Pokemons">
         <>{pokemons.map((pokemon , index) => (
-           <PokemonRow
+           <Pokemon
             key={index}
-            pokemonImage={pokemon.image}
-            pokemonName={pokemon.name}
-            pokemonType={pokemon.type}
-            pokemonIsFavourite={pokemon.isFavorite}
+            image={pokemon.image}
+            name={pokemon.name}
+            type={pokemon.type}
+            isFavourite={pokemon.isFavorite}
           />
         ))}
         </>
+        </div>
       </div>
     );
   }

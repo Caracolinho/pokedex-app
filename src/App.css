@@ -1,8 +1,16 @@
 .App {
- display: flex;
+  /* display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1200px;
-  margin-block: 2rem;
-  gap: 2rem;
+  margin-block: 2rem;   */
+}
+
+.Pokemons{
+
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; */
 }
