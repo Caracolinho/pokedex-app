@@ -10,7 +10,31 @@ const pokemons = [
     name: "Bulbasaur",
     classification: "Seed Pokemon",
     type: ["Grass","Poison"],
-    isFavorite: false
+    isFavorite: true
+  },
+  {
+    id: "001",
+    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+    name: "Bulbasaur",
+    classification: "Seed Pokemon",
+    type: ["Grass","Veneno","Mentol"],
+    isFavorite: true
+  },
+  {
+    id: "001",
+    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+    name: "Bulbasaur",
+    classification: "Seed Pokemon",
+    type: ["Grass"],
+    isFavorite: true
+  },
+  {
+    id: "001",
+    image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
+    name: "Bulbasaur",
+    classification: "Seed Pokemon",
+    type: ["Grass","Veneno","Fogo","Silva"],
+    isFavorite: true
   }
  
 ]
@@ -25,7 +49,7 @@ class App extends Component {
             key={index}
             image={pokemon.image}
             name={pokemon.name}
-            type={pokemon.type}
+            types={pokemon.type}
             isFavourite={pokemon.isFavorite}
           />
         ))}
