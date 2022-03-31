@@ -33,3 +33,10 @@
     font-size: 15.6px;
 }
 
+
+.favouriteIcon{
+    position: relative;
+    left: 117px;
+    top: -26px;
+    color: red;
+}

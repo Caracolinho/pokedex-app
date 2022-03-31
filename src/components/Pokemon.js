@@ -1,4 +1,5 @@
 import React from "react"
+import { FaHeart , FaRegHeart } from 'react-icons/fa';
 import './Pokemon.css'
 
 const Pokemon = ({image , name , type , isFavourite}) => {
@@ -9,6 +10,7 @@ const Pokemon = ({image , name , type , isFavourite}) => {
            <div className="textName">{name}</div>
            <div className="textType">{type}</div>
            {/* <p>{isFavourite.toString()}</p> */}
+           <div className="favouriteIcon"><FaHeart/></div>
        </div> 
     </div>)
 }

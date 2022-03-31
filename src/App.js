@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import Pokemon from './components/Pokemon'
+import Pokemon from './components/Pokemon';
+ 
 import './App.css';
 
 const pokemons = [
   {
+    id: "001",
     image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
     name: "Bulbasaur",
-    type: "Grass, Poison",
+    classification: "Seed Pokemon",
+    type: ["Grass","Poison"],
     isFavorite: true
   }
  
