@@ -9,8 +9,8 @@ const Pokemon = ({image , name , type , isFavourite}) => {
        <div className="cardFotter">
            <div className="textName">{name}</div>
            <div className="textType">{type}</div>
-           {/* <p>{isFavourite.toString()}</p> */}
-           <div className="favouriteIcon"><FaHeart/></div>
+           {isFavourite ? <div className="favouriteIcon"><FaHeart/></div> : <div className="favouriteIcon"><FaRegHeart/></div>}
+           
        </div> 
     </div>)
 }

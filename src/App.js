@@ -10,7 +10,7 @@ const pokemons = [
     name: "Bulbasaur",
     classification: "Seed Pokemon",
     type: ["Grass","Poison"],
-    isFavorite: true
+    isFavorite: false
   }
  
 ]
