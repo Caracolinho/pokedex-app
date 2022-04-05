@@ -3,21 +3,29 @@ import Pokemon from './components/Pokemon';
 import {getPokemos} from './Api/PokemonApi'
 import './App.css';
 
-const pokemons = getPokemos()
-
-debugger
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {pokemons: []};
+  }
+
+  async componentDidMount() {
+    const pokemons = await getPokemos()
+    this.setState({
+      pokemons
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <div className="Pokemons">
-        <>{pokemons.map((pokemon , index) => (
+        <>{this.state.pokemons.map((pokemon , index) => (
            <Pokemon 
             key={index}
             image={pokemon.image}
             name={pokemon.name}
-            types={pokemon.type}
+            types={pokemon.types}
             isFavourite={pokemon.isFavorite}
           />
         ))}
