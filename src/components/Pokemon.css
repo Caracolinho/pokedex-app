@@ -4,6 +4,8 @@
   width: 153px;
   display: inline-block;
   position: relative;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .PokemonImage {
