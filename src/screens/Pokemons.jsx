@@ -6,7 +6,7 @@ function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(async () => {
-    const pokemons = await getPokemos();
+    const pokemons = await getPokemos({limit: 10 , offset: 0});
     setPokemons(pokemons);
   }, []);
 
