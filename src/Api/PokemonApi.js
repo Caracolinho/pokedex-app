@@ -2,7 +2,7 @@ function getPokemos() {
 
   const pokemonQuery = `
         query {
-            pokemons(query: { limit: 12, offset: 0, search: "" }) {
+            pokemons(query: { limit: 24, offset: 0, search: "" }) {
                 limit
                 offset
                 count
