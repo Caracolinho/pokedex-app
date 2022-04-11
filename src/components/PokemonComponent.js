@@ -1,22 +1,7 @@
 import React from "react";
 import "./pokemonComponent.css";
 import { FaRegHeart , FaHeart } from "react-icons/fa";
-import { GiSpeaker } from "react-icons/gi";
-
-
-    const pokemon = [
-      {
-        image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
-        sound:"",
-        name: "Charizard",
-        type: "Fire",
-        isFavorite: true,
-        maxCp:12,
-        maxHp:24,
-        weight:"7kg",
-        height:"10m",
-      }
-    ]
+import { GiSpeaker } from "react-icons/gi";    
 
     const PokemonComponent = ({ image , sound , name , types, isFavourite ,
          maxCp , maxHp , weight , height }) => {
