@@ -1,16 +1,10 @@
 .App {
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1200px;
-  margin-block: 2rem;   */
+  width: 700px;
 }
 
 .Pokemons{
-
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 500px;
 }

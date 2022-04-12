@@ -1,0 +1,97 @@
+.pokemonDetails {
+    width: 700px;
+    background-color: white;
+}
+
+.PokemonInfo{
+    border: lightgrey 1px solid;
+    width: 664px;
+    margin-left: 11px;
+    height: 657px;
+}
+
+.PokemonImageDetails{
+    width: 386px;
+    margin-top: 11px;
+    margin-left: 140px;
+}
+
+.PokemonSound{
+    color: green;
+    position: relative;
+    left: 18px;
+    bottom: 69px;
+}
+
+.PokemonBody{
+    background-color:rgb(243, 243, 243);
+    height: 247px;
+    margin-top: -61px;
+}
+
+.PokemonName{
+    padding-top: 25px;
+    padding-left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.PokemonTypes{
+    padding-left: 11px;
+}
+
+.favouriteIconDetails{
+    color: red;
+    padding-left: 623px;
+    position: relative;
+    top: -40px;
+}
+
+.CpBar{
+    background-color: rgb(159, 159, 255);
+    width: 561px;
+    height: 9px;
+    left: 11px;
+    position: relative;
+    top: -19px;
+    border-radius: 5px;
+}
+
+.HpBar{
+    background-color: rgb(112, 193, 161);
+    width: 561px;
+    height: 9px;
+    left: 11px;
+    position: relative;
+    top: 0px;
+    border-radius: 5px;
+}
+
+.PokemonCp{
+    left: 584px;
+    position: relative;
+    bottom: 41px;
+    font-weight: bold;
+}
+
+.PokemonHp{
+    left: 584px;
+    position: relative;
+    bottom: 31px;
+    font-weight: bold;
+}
+
+.PokemonMeasureContainer{
+    display: flex;
+    align-content: flex-start;
+}
+
+.PokemonMeasure{
+    display: flex;
+    align-content: center;
+    border: lightgray 1px solid;
+    justify-content: space-evenly;
+}
+
+
+

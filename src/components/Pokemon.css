@@ -4,6 +4,8 @@
   width: 153px;
   display: inline-block;
   position: relative;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .PokemonImage {
@@ -12,6 +14,7 @@
   margin-left: 8px;
   margin-right: 10px;
 }
+
 .cardFotter {
   background: rgb(241, 241, 241);
   display: table-cell;
