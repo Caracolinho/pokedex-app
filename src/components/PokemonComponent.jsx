@@ -27,8 +27,8 @@ const PokemonComponent = ({
   name,
   types=[],
   isFavourite,
-  maxCp,
-  maxHp,
+  maxCP,
+  maxHP,
   weight,
   height,
 }) => {
@@ -55,8 +55,8 @@ const PokemonComponent = ({
           )}
           <div className="CpBar"></div>
           <div className="HpBar"></div>
-          <div className="PokemonCp">CP: {maxCp}</div>
-          <div className="PokemonHp">HP: {maxHp}</div>
+          <div className="PokemonCp">CP: {maxCP}</div>
+          <div className="PokemonHp">HP: {maxHP}</div>
           <div className="PokemonMeasureContainer">
           <PokemonMeasure 
             measure={"Weight"}

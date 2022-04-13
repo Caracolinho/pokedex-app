@@ -23,8 +23,8 @@ function Pokemon() {
         name={pokemon.name}
         types={pokemon.types}
         isFavourite={pokemon.isFavorite}
-        maxCp={pokemon.maxCp}
-        maxHp={pokemon.maxHp}
+        maxCP={pokemon.maxCP}
+        maxHP={pokemon.maxHP}
         weight={pokemon.weight}
         height={pokemon.height}
       />
