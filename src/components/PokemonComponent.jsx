@@ -36,6 +36,7 @@ const PokemonComponent = ({
     <div className="PokemonComponent">
       <div className="PokemonInfo">
           <img className="PokemonImageDetails" src={image} alt="Pokemon Image" />
+          <div className="GoBackButton"><button/></div>
           <div className="PokemonSound"> 
             <GiSpeaker size={55}/>
           </div> 
