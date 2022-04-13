@@ -91,7 +91,26 @@
     align-content: center;
     border: lightgray 1px solid;
     justify-content: space-evenly;
+    width: 400px;
+    height: 86px;
 }
 
+.MeasureText{
+    position: relative;
+    top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    left: 63px;
+}
 
+.MeasureFrom{
+    position: relative;
+    top: 48px;
+    right: 98px;
+}
 
+.MeasureTo{
+    position: relative;
+    top: 29px;
+    right: 33px;
+}

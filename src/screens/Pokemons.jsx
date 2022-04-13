@@ -17,7 +17,7 @@ function Pokemons() {
   async function fetchMoreData() {
     const newPokemons = await getPokemos({
       limit: defaultLimit,
-      offset: pokemons.length  ,
+      offset: pokemons.length,
     });
     setPokemons([...pokemons, ...newPokemons]);
   }
@@ -32,8 +32,7 @@ function Pokemons() {
             flexDirection: 'row'}}
         hasMore={true}
         loader={<h4>Loading...</h4>}
-        scrollableTarget="scrollableDiv"
-      >
+        scrollableTarget="scrollableDiv">
         {pokemons.map((pokemon, index) => (
           <Pokemon
             key ={index}

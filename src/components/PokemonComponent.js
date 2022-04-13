@@ -75,23 +75,26 @@ const PokemonComponent = ({
   );
 };
 
-// function PokemonLife({cp , hp}){
-//   return (
-
-//   )
-// }
+// function PokemonLife({ bar , value}){
+//    return (
+//    <div className="HpBar"></div>
+//    <div className="PokemonCp">
+//          {value}
+//     </div>
+//    )
+//  }
 
 function PokemonMeasure( {measure , from , to}){
   return (
     <div className="PokemonMeasure">
-      <div>
+      <div className="MeasureText">
         {measure}
       </div>
       <div>
-        <div>
-          {from}
+        <div className="MeasureFrom">
+          {from} - 
         </div>
-        <div>
+        <div className="MeasureTo">
           {to}
         </div>
       </div>
