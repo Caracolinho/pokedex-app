@@ -1,6 +1,6 @@
 import React from "react";
 import "./pokemonComponent.css";
-import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { FaRegHeart, FaHeart , FaArrowCircleLeft } from "react-icons/fa";
 import { GiSpeaker } from "react-icons/gi";
 
 function typesTextTransformation(types) {
@@ -36,7 +36,7 @@ const PokemonComponent = ({
     <div className="PokemonComponent">
       <div className="PokemonInfo">
           <img className="PokemonImageDetails" src={image} alt="Pokemon Image" />
-          <button className="GoBackButton"></button>
+          <button className="GoBackButton"><FaArrowCircleLeft size={60} color={"white"}/></button>
           <div className="PokemonSound"> 
             <GiSpeaker size={55}/>
           </div> 
