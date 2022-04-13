@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Pokemons from "./screens/Pokemons";
 import Pokemon from "./screens/Pokemon";
