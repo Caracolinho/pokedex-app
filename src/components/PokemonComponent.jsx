@@ -2,6 +2,7 @@ import React from "react";
 import "./pokemonComponent.css";
 import { FaRegHeart, FaHeart , FaArrowCircleLeft } from "react-icons/fa";
 import { GiSpeaker } from "react-icons/gi";
+import { useNavigate } from 'react-router-dom';
 
 function typesTextTransformation(types) {
   const initialValue = "";
@@ -32,11 +33,14 @@ const PokemonComponent = ({
   weight,
   height,
 }) => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="PokemonComponent">
       <div className="PokemonInfo">
           <img className="PokemonImageDetails" src={image} alt="Pokemon Image" />
-          <button className="GoBackButton"><FaArrowCircleLeft size={60} color={"white"}/></button>
+          <button className="GoBackButton" onClick={()=> navigate("/pokemons")}><FaArrowCircleLeft size={60} color={"white"}/></button>
           <div className="PokemonSound"> 
             <GiSpeaker size={55}/>
           </div> 
