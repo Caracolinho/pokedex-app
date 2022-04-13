@@ -1,38 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { getPokemon } from "../Api/PokemonApi.js";
+import { useParams } from "react-router-dom";
+import { getPokemon } from "../Api/PokemonApi";
 import PokemonComponent from "../components/PokemonComponent";
 
 function Pokemon() {
-    
-    const [pokemon, setPokemon] = useState(null)
+  const [pokemon, setPokemon] = useState(null);
+  let { id } = useParams();
 
-    useEffect(async () => {
-        const pokemon = await getPokemon("007");
-        setPokemon(pokemon);
-    }, []);
-    if ( !pokemon ){
-      return <div>No pokemons</div>
-    }
+  useEffect(async () => {
+    const pokemon = await getPokemon(id);
+    setPokemon(pokemon);
+  }, []);
+  if (!pokemon) {
+    return <div>No pokemons</div>;
+  }
 
-    return (
-      <div className="Pokemon">   
-            <PokemonComponent
-              image={pokemon.image}
-              sound={pokemon.sound}
-              name={pokemon.name}
-              types={pokemon.types}
-              isFavourite={pokemon.isFavorite}
-              maxCp={pokemon.maxCp}
-              maxHp={pokemon.maxHp}
-              weight={pokemon.weight}
-              height={pokemon.height}
-            />
-      </div>
-    );
+  return (
+    <div className="Pokemon">
+      <PokemonComponent
+        image={pokemon.image}
+        sound={pokemon.sound}
+        name={pokemon.name}
+        types={pokemon.types}
+        isFavourite={pokemon.isFavorite}
+        maxCp={pokemon.maxCp}
+        maxHp={pokemon.maxHp}
+        weight={pokemon.weight}
+        height={pokemon.height}
+      />
+    </div>
+  );
 }
 
 export default Pokemon;
-
 
 // const objet = {name:"juancho"}
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import "./Pokemon.css";
 
@@ -21,9 +22,12 @@ function isLatest(current, collection) {
   return current + 1 === collection;
 }
 
-const Pokemon = ({ image, name, types, isFavourite }) => {
+const Pokemon = ({ id, image, name, types, isFavourite }) => {
+
+  const navigate = useNavigate();
+
   return (
-    <div className="PokemonRow">
+    <div className="PokemonRow" onClick={()=> navigate(`/pokemon/${id}`)}>
       <img className="PokemonImage" src={image} />
       <div className="cardFotter">
         <div className="textName">{name}</div>
