@@ -16,6 +16,16 @@
     margin-left: 140px;
 }
 
+.GoBackButton{
+    position: relative;
+    background-color: royalblue;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    border: none;
+    bottom: 303px;
+}
+
 .PokemonSound{
     color: green;
     position: relative;
