@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { getPokemos } from "../Api/PokemonApi.js";
-import Pokemon from "../components/Pokemon.js";
+import { getPokemos } from "../Api/PokemonApi";
+import Pokemon from "../components/Pokemon";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const defaultLimit = 12;
