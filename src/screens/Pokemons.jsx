@@ -36,6 +36,7 @@ function Pokemons() {
         {pokemons.map((pokemon, index) => (
           <Pokemon
             key ={index}
+            id={pokemon.id}
             image={pokemon.image}
             name={pokemon.name}
             types={pokemon.types}
