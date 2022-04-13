@@ -1,8 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Pokemons from "./screens/Pokemons";
-import Pokemon from "./screens/Pokemon";
-import NotFound from "./screens/NotFound";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {Pokemons, Pokemon, NotFound} from "./screens";
 import "./App.css";
 
 function App() {
