@@ -27,7 +27,7 @@ const Pokemon = ({ id, image, name, types, isFavourite }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="PokemonRow" onClick={()=> navigate(`/pokemon/${id}`)}>
+    <div className="PokemonRow" onClick={()=> navigate(`/pokemons/${id}`)}>
       <img className="PokemonImage" src={image} />
       <div className="cardFotter">
         <div className="textName">{name}</div>
