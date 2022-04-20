@@ -55,6 +55,11 @@ function getPokemon(id) {
         minimum
         maximum
       }
+      evolutions{
+        id
+        name
+        isFavorite
+      }
     }
   }    
       `;

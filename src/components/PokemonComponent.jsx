@@ -3,6 +3,7 @@ import "./pokemonComponent.css";
 import { FaRegHeart, FaHeart , FaArrowCircleLeft } from "react-icons/fa";
 import { GiSpeaker } from "react-icons/gi";
 import { useNavigate } from 'react-router-dom';
+import PokemonEvolution from "./PokemonEvolutions";
 
 function typesTextTransformation(types) {
   const initialValue = "";
@@ -74,8 +75,11 @@ const PokemonComponent = ({
             to = {height.maximum}
           />
           </div>
-          </div> 
+          </div>  
       </div>  
+      <div className="PokemonEvolution">
+        <PokemonEvoluitonComponent/>
+      </div>
     </div>
   );
 };
@@ -106,6 +110,16 @@ function PokemonMeasure( {measure , from , to}){
     </div>
   )
 
+}
+
+
+function PokemonEvoluitonComponent (){
+  return (
+    <div className="PokemonEvoluitonComponent">
+      <div className="PokemonEvolutionText">Evolutions</div>
+      <PokemonEvolution/>
+    </div>
+  )
 }
 
 export default PokemonComponent;

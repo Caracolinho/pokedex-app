@@ -4,6 +4,7 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 import "./Pokemon.css";
 
 function typesTextTransformation(types) {
+
   const initialValue = "";
 
   const textTypes = types.reduce(
@@ -22,7 +23,7 @@ function isLatest(current, collection) {
   return current + 1 === collection;
 }
 
-const Pokemon = ({ id, image, name, types, isFavourite }) => {
+const Pokemon = ({ id, image, name, types, isFavourite , showType = true }) => {
 
   const navigate = useNavigate();
 
