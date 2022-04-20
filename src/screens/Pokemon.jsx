@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getPokemon } from "../Api/PokemonApi";
 import PokemonComponent from "../components/PokemonComponent";
-import PokemonEvolutions from "../components/PokemonEvolutions";
-import InfiniteScroll from "react-infinite-scroll-component";
+import PokemonsEvolution from "../components/PokemonsEvolutions";
 
 function Pokemon() {
   const [pokemon, setPokemon] = useState(null);
@@ -12,12 +11,11 @@ function Pokemon() {
   useEffect(async () => {
     const pokemon = await getPokemon(id);
     setPokemon(pokemon);
-  }, []);
+  }, [id]);
 
   if (!pokemon) {
     return <div>No pokemons</div>;
   }
-
 
   return (
     <div className="Pokemon">
@@ -32,29 +30,9 @@ function Pokemon() {
         weight={pokemon.weight}
         height={pokemon.height}
       />
-      {/* <InfiniteScroll
-        dataLength={0}
-        next={0}
-        style={{display: 'flex',
-            flexWrap: 'wrap',
-            flexDirection: 'column'}}
-        hasMore={true}
-        loader={<h4>Loading...</h4>}
-        scrollableTarget="scrollableDiv">
-        {pokemon.map((pokemon, index) => (
-          <PokemonEvolutions
-            key ={index}
-            id={pokemon.id}
-            image={pokemon.image}
-            name={pokemon.name}
-            isFavourite={pokemon.isFavorite}
-          />
-        ))}
-      </InfiniteScroll> */}
+      <PokemonsEvolution pokemons={pokemon.evolutions} /> 
     </div>
   );
 }
 
 export default Pokemon;
-
-
