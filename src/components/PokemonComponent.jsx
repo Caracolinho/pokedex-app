@@ -77,9 +77,6 @@ const PokemonComponent = ({
           </div>
           </div>  
       </div>  
-      <div className="PokemonEvolution">
-        <PokemonEvoluitonComponent/>
-      </div>
     </div>
   );
 };

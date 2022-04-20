@@ -13,6 +13,7 @@ function Pokemon() {
     const pokemon = await getPokemon(id);
     setPokemon(pokemon);
   }, []);
+
   if (!pokemon) {
     return <div>No pokemons</div>;
   }
@@ -31,7 +32,7 @@ function Pokemon() {
         weight={pokemon.weight}
         height={pokemon.height}
       />
-      <InfiniteScroll
+      {/* <InfiniteScroll
         dataLength={0}
         next={0}
         style={{display: 'flex',
@@ -49,7 +50,7 @@ function Pokemon() {
             isFavourite={pokemon.isFavorite}
           />
         ))}
-      </InfiniteScroll>
+      </InfiniteScroll> */}
     </div>
   );
 }

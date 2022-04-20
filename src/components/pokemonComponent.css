@@ -7,7 +7,6 @@
     border: lightgrey 1px solid;
     width: 664px;
     margin-left: 11px;
-    height: 657px;
 }
 
 .PokemonImageDetails{
@@ -37,7 +36,6 @@
     background-color:rgb(243, 243, 243);
     height: 247px;
     position: relative;
-    bottom: 63px;
 }
 
 .PokemonName{
