@@ -58,6 +58,7 @@ function getPokemon(id) {
       evolutions{
         id
         name
+        image
         isFavorite
       }
     }
