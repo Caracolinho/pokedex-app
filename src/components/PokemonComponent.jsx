@@ -1,9 +1,8 @@
 import React from "react";
 import "./pokemonComponent.css";
-import { FaRegHeart, FaHeart , FaArrowCircleLeft } from "react-icons/fa";
+import { FaRegHeart, FaHeart, FaArrowCircleLeft } from "react-icons/fa";
 import { GiSpeaker } from "react-icons/gi";
-import { useNavigate } from 'react-router-dom';
-import PokemonEvolution from "./PokemonEvolutions";
+import { useNavigate } from "react-router-dom";
 
 function typesTextTransformation(types) {
   const initialValue = "";
@@ -27,36 +26,35 @@ function isLatest(current, collection) {
 const PokemonComponent = ({
   image,
   name,
-  types=[],
+  types = [],
   isFavourite,
   maxCP,
   maxHP,
   weight,
   height,
 }) => {
-
   const navigate = useNavigate();
 
   return (
     <div className="PokemonComponent">
       <div className="PokemonInfo">
-          <img className="PokemonImageDetails" src={image} alt="Pokemon Image" />
-          <button className="GoBackButton" onClick={()=> navigate("/pokemons")}><FaArrowCircleLeft size={60} color={"white"}/></button>
-          <div className="PokemonSound"> 
-            <GiSpeaker size={55}/>
-          </div> 
+        <img className="PokemonImageDetails" src={image} alt="Pokemon Image" />
+        <button className="GoBackButton" onClick={() => navigate("/pokemons")}>
+          <FaArrowCircleLeft size={60} color={"white"} />
+        </button>
+        <div className="PokemonSound">
+          <GiSpeaker size={55} />
+        </div>
         <div className="PokemonBody">
           <div className="PokemonName">{name}</div>
-          <div className="PokemonTypes">
-            {typesTextTransformation(types)}
-          </div>
+          <div className="PokemonTypes">{typesTextTransformation(types)}</div>
           {isFavourite ? (
             <div className="favouriteIconDetails">
-              <FaHeart size={28}/>
+              <FaHeart size={28} />
             </div>
           ) : (
             <div className="favouriteIconDetails">
-              <FaRegHeart size={28}/>
+              <FaRegHeart size={28} />
             </div>
           )}
           <div className="CpBar"></div>
@@ -64,59 +62,33 @@ const PokemonComponent = ({
           <div className="PokemonCp">CP: {maxCP}</div>
           <div className="PokemonHp">HP: {maxHP}</div>
           <div className="PokemonMeasureContainer">
-          <PokemonMeasure 
-            measure={"Weight"}
-            from={weight.minimum}
-            to = {weight.maximum}
-          />
-           <PokemonMeasure 
-            measure={"Height"}
-            from={height.minimum}
-            to = {height.maximum}
-          />
+            <PokemonMeasure
+              measure={"Weight"}
+              from={weight.minimum}
+              to={weight.maximum}
+            />
+            <PokemonMeasure
+              measure={"Height"}
+              from={height.minimum}
+              to={height.maximum}
+            />
           </div>
-          </div>  
-      </div>  
+        </div>
+      </div>
     </div>
   );
 };
 
-// function PokemonLife({ bar , value}){
-//    return (
-//    <div className="HpBar"></div>
-//    <div className="PokemonCp">
-//          {value}
-//     </div>
-//    )
-//  }
-
-function PokemonMeasure( {measure , from , to}){
+function PokemonMeasure({ measure, from, to }) {
   return (
     <div className="PokemonMeasure">
-      <div className="MeasureText">
-        {measure}
-      </div>
+      <div className="MeasureText">{measure}</div>
       <div>
-        <div className="MeasureFrom">
-          {from} - 
-        </div>
-        <div className="MeasureTo">
-          {to}
-        </div>
+        <div className="MeasureFrom">{from} -</div>
+        <div className="MeasureTo">{to}</div>
       </div>
     </div>
-  )
-
-}
-
-
-function PokemonEvoluitonComponent (){
-  return (
-    <div className="PokemonEvoluitonComponent">
-      <div className="PokemonEvolutionText">Evolutions</div>
-      <PokemonEvolution/>
-    </div>
-  )
+  );
 }
 
 export default PokemonComponent;
