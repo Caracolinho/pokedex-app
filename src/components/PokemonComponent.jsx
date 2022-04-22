@@ -24,14 +24,17 @@ function isLatest(current, collection) {
 }
 
 const PokemonComponent = ({
-  image,
-  name,
-  types = [],
-  isFavourite,
-  maxCP,
-  maxHP,
-  weight,
-  height,
+  pokemon: {
+    image,
+    name,
+    types = [],
+    isFavourite,
+    maxCP,
+    maxHP,
+    weight,
+    height,
+  },
+  handleChangeIsFavourite
 }) => {
   const navigate = useNavigate();
 
@@ -49,11 +52,11 @@ const PokemonComponent = ({
           <div className="PokemonName">{name}</div>
           <div className="PokemonTypes">{typesTextTransformation(types)}</div>
           {isFavourite ? (
-            <div className="favouriteIconDetails">
+          <div className="favouriteIconDetails" onClick={handleChangeIsFavourite}>
               <FaHeart size={28} />
             </div>
           ) : (
-            <div className="favouriteIconDetails">
+            <div className="favouriteIconDetails" onClick={handleChangeIsFavourite}>
               <FaRegHeart size={28} />
             </div>
           )}

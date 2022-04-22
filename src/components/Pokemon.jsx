@@ -22,7 +22,7 @@ function isLatest(current, collection) {
   return current + 1 === collection;
 }
 
-const Pokemon = ({ id, image, name, types, isFavourite, showType = true }) => {
+const Pokemon = ({ id, image, name, types, isFavourite, showType = true },handleChangeIsFavourite) => {
   const navigate = useNavigate();
 
   return (
@@ -34,14 +34,14 @@ const Pokemon = ({ id, image, name, types, isFavourite, showType = true }) => {
           <div className="textType">{typesTextTransformation(types)}</div>
         ) : null}
         {isFavourite ? (
-          <div className="favouriteIcon">
-            <FaHeart />
-          </div>
-        ) : (
-          <div className="favouriteIcon">
-            <FaRegHeart />
-          </div>
-        )}
+          <button className="favouriteIconDetails" onClick={handleChangeIsFavourite}>
+              <FaHeart size={28} />
+            </button>
+          ) : (
+            <button className="favouriteIconDetails" onClick={handleChangeIsFavourite}>
+              <FaRegHeart size={28} />
+            </button>
+          )} 
       </div>
     </div>
   );
