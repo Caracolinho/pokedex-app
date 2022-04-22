@@ -25,7 +25,7 @@ function Pokemon() {
     setIsFavourite(pokemonIsFavourite);
     alert("ola");
   }
-
+  
   return (
 
 
