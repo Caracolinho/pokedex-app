@@ -38,9 +38,11 @@
 
 .favouriteIcon {
   position: relative;
-  left: 117px;
-  top: -26px;
+  left: 112px;
+  top: -28px;
   color: red;
+  border: none;
+  background: none;
 }
 
 
