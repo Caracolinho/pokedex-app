@@ -85,7 +85,7 @@ function getPokemon(id) {
 function setFavourite(id) {
   const pokemonQuery = `
   mutation setFavourite($id: ID!) {
-    favoritePokemon (id:$id ){
+    favoritePokemon (id: $id){
       isFavorite
       }
     }
@@ -108,4 +108,30 @@ function setFavourite(id) {
     });
 }
 
-export { getPokemos , getPokemon , setFavourite};
+function setUnfavourite(id) {
+  const pokemonQuery = `
+    mutation setUnfavourite($id: ID!){
+      unFavoritePokemon (id: $id){
+        isFavorite
+        }
+    }
+    `;
+
+  return window
+     .fetch("http://localhost:4000/graphql", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json;charset=UTF-8",
+      },
+      body: JSON.stringify({
+        query: pokemonQuery,
+        variables:{id},
+      }),
+    })
+    .then((r) => r.json())
+    .then((response) => {
+      return response.data.unFavoritePokemon;
+    });
+}
+
+export { getPokemos , getPokemon , setFavourite , setUnfavourite};
