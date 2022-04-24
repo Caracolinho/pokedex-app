@@ -3,7 +3,6 @@ import "./PokemonEvolutions.css";
 import Pokemon from "./Pokemon";
 
 function PokemonsEvolution({pokemons}) {
-  debugger
   if(!pokemons){
     return <div>Not pokemons evolutions</div>
   }
