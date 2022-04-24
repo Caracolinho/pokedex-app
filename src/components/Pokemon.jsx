@@ -34,14 +34,14 @@ const Pokemon = ({ id, image, name, types, isFavourite, showType = true },handle
           <div className="textType">{typesTextTransformation(types)}</div>
         ) : null}
         {isFavourite ? (
-          <button className="favouriteIconDetails" onClick={handleChangeIsFavourite}>
-              <FaHeart size={28} />
-            </button>
+          <button className="favouriteIcon">
+              <FaHeart size={20} />
+          </button>
           ) : (
-            <button className="favouriteIconDetails" onClick={handleChangeIsFavourite}>
-              <FaRegHeart size={28} />
+            <button className="favouriteIcon">
+              <FaRegHeart size={20} />
             </button>
-          )} 
+        )} 
       </div>
     </div>
   );
