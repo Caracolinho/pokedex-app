@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getPokemon , setFavourite} from "../Api/PokemonApi";
+import { getPokemon , setFavourite ,setUnfavourite} from "../Api/PokemonApi";
 import PokemonComponent from "../components/PokemonComponent";
 import PokemonsEvolution from "../components/PokemonsEvolutions";
 
 function Pokemon() {
   const [pokemon, setPokemon] = useState(null);
-  const [isFavourite , setIsFavourite] = useState ();
 
   let { id } = useParams();
 
@@ -19,20 +18,27 @@ function Pokemon() {
     return <div>No pokemons</div>;
   }
 
-  function onChangeIsFavourite (){
-    
-    const pokemonIsFavourite = setFavourite (id);
-    setIsFavourite(pokemonIsFavourite);
+  async function onChangeIsFavourite(){
+    const pokemonIsFavourite = await setFavourite(id);
+    const isFavourite = pokemonIsFavourite[isFavourite];
+    setPokemon({...pokemon, isFavourite: pokemonIsFavourite});
     alert("ola");
   }
-  
-  return (
 
+  async function onChangeIsUnfavourite(){
+    const pokemonIsUnavourite = await setUnfavourite(id);
+    const isFavourite = pokemonIsUnavourite[isFavourite];
+    setPokemon({...pokemon, isFavourite : isFavourite});
+    alert("adeus");
+  }
+
+  return (
 
     <div className="Pokemon">
       <PokemonComponent
         pokemon={pokemon}
         handleChangeIsFavourite={onChangeIsFavourite}
+        handleChangeIsUnfavourite={onChangeIsUnfavourite}
       />
       <PokemonsEvolution pokemons={pokemon.evolutions} /> 
     </div>

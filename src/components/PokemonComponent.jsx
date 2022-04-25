@@ -34,7 +34,9 @@ const PokemonComponent = ({
     weight,
     height,
   },
-  handleChangeIsFavourite
+  handleChangeIsFavourite,
+  handleChangeIsUnfavourite,
+  
 }) => {
   const navigate = useNavigate();
 
@@ -51,15 +53,17 @@ const PokemonComponent = ({
         <div className="PokemonBody">
           <div className="PokemonName">{name}</div>
           <div className="PokemonTypes">{typesTextTransformation(types)}</div>
-          {isFavourite ? (
-          <div className="favouriteIconDetails" onClick={handleChangeIsFavourite}>
+          <>
+          {isFavourite ? 
+            <button className="favouriteIconDetails" onClick={handleChangeIsUnfavourite}>
               <FaHeart size={28} />
-            </div>
-          ) : (
-            <div className="favouriteIconDetails" onClick={handleChangeIsFavourite}>
+            </button>
+           : 
+            <button className="favouriteIconDetails" onClick={handleChangeIsFavourite}>
               <FaRegHeart size={28} />
-            </div>
-          )}
+            </button>
+          }
+          </>
           <div className="CpBar"></div>
           <div className="HpBar"></div>
           <div className="PokemonCp">CP: {maxCP}</div>
