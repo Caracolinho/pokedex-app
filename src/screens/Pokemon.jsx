@@ -15,12 +15,7 @@ function Pokemon() {
   }, [id]);
 
   async function onChangeIsFavourite() {
-    const { isFavorite: value } = await setFavourite(id);
-    setPokemon({ ...pokemon, isFavorite: value });
-  }
-
-  async function onChangeIsUnfavourite() {
-    const { isFavorite } = await setUnfavourite(id);
+    const { isFavorite } = await setFavourite(id, !pokemon.isFavorite);
     setPokemon({ ...pokemon, isFavorite });
   }
 
@@ -33,7 +28,7 @@ function Pokemon() {
       <PokemonComponent
         pokemon={pokemon}
         handleChangeIsFavourite={onChangeIsFavourite}
-        handleChangeIsUnfavourite={onChangeIsUnfavourite}
+        handleChangeIsUnfavourite={onChangeIsFavourite}
       />
       <PokemonsEvolution pokemons={pokemon.evolutions} />
     </div>

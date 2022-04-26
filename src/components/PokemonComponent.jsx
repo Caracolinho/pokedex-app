@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 function typesTextTransformation(types) {
   const initialValue = "";
-  
 
   const textTypes = types.reduce(
     (previousValue, currentValue, currentIndexOptional) => {
@@ -53,7 +52,7 @@ const PokemonComponent = ({
           <div className="PokemonName">{name}</div>
           <div className="PokemonTypes">{typesTextTransformation(types)}</div>
           {isFavorite ? 
-            <button className="favouriteIconDetails" onClick={handleChangeIsUnfavourite}>
+            <button className="favouriteIconDetails" onClick={() => handleChangeIsFavourite(!isFavorite)}>
               <FaHeart size={28} />
             </button>
            : 

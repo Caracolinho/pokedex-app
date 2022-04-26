@@ -1,4 +1,4 @@
-function getPokemos({limit , offset}) {
+function getPokemos({ limit, offset }) {
   const pokemonQuery = `
         query PokemonsList($limit: Int , $offset: Int){
             pokemons(query: { limit: $limit, offset: $offset, search: "" }) {
@@ -17,14 +17,14 @@ function getPokemos({limit , offset}) {
       `;
 
   return window
-     .fetch("http://localhost:4000/graphql", {
+    .fetch("http://localhost:4000/graphql", {
       method: "POST",
       headers: {
         "content-type": "application/json;charset=UTF-8",
       },
       body: JSON.stringify({
         query: pokemonQuery,
-        variables: {limit , offset},
+        variables: { limit, offset },
       }),
     })
     .then((r) => r.json())
@@ -66,14 +66,14 @@ function getPokemon(id) {
       `;
 
   return window
-     .fetch("http://localhost:4000/graphql", {
+    .fetch("http://localhost:4000/graphql", {
       method: "POST",
       headers: {
         "content-type": "application/json;charset=UTF-8",
       },
       body: JSON.stringify({
         query: pokemonQuery,
-        variables:{id},
+        variables: { id },
       }),
     })
     .then((r) => r.json())
@@ -82,8 +82,8 @@ function getPokemon(id) {
     });
 }
 
-function setFavourite(id) {
-  const pokemonQuery = `
+function setFavourite(id, isFavorite) {
+  const favoriteQuery = `
   mutation setFavourite($id: ID!) {
     favoritePokemon (id: $id){
       isFavorite
@@ -91,25 +91,7 @@ function setFavourite(id) {
     }
     `;
 
-  return window
-     .fetch("http://localhost:4000/graphql", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json;charset=UTF-8",
-      },
-      body: JSON.stringify({
-        query: pokemonQuery,
-        variables:{id},
-      }),
-    })
-    .then((r) => r.json())
-    .then((response) => {
-      return response.data.favoritePokemon;
-    });
-}
-
-function setUnfavourite(id) {
-  const pokemonQuery = `
+  const unFavoriteQuery = `
     mutation setUnfavourite($id: ID!){
       unFavoritePokemon (id: $id){
         isFavorite
@@ -118,20 +100,22 @@ function setUnfavourite(id) {
     `;
 
   return window
-     .fetch("http://localhost:4000/graphql", {
+    .fetch("http://localhost:4000/graphql", {
       method: "POST",
       headers: {
         "content-type": "application/json;charset=UTF-8",
       },
       body: JSON.stringify({
-        query: pokemonQuery,
-        variables:{id},
+        query: isFavorite ? favoriteQuery : unFavoriteQuery,
+        variables: { id },
       }),
     })
     .then((r) => r.json())
     .then((response) => {
-      return response.data.unFavoritePokemon;
+      return response.data[
+        isFavorite ? "favoritePokemon" : "unFavoritePokemon"
+      ];
     });
 }
 
-export { getPokemos , getPokemon , setFavourite , setUnfavourite};
+export { getPokemos, getPokemon, setFavourite };
