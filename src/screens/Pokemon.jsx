@@ -19,16 +19,15 @@ function Pokemon() {
   }
 
   async function onChangeIsFavourite(){
-    const pokemonIsFavourite = await setFavourite(id);
-    const isFavourite = pokemonIsFavourite[isFavourite];
-    setPokemon({...pokemon, isFavourite: pokemonIsFavourite});
+    const {isFavourite:value} = await setFavourite(id);
+    console.log(value)
+    setPokemon({...pokemon, isFavourite: value});
     alert("ola");
   }
 
   async function onChangeIsUnfavourite(){
-    const pokemonIsUnavourite = await setUnfavourite(id);
-    const isFavourite = pokemonIsUnavourite[isFavourite];
-    setPokemon({...pokemon, isFavourite : isFavourite});
+    const {isFavourite:value} = await setUnfavourite(id);
+    setPokemon({...pokemon, isFavourite : value});
     alert("adeus");
   }
 

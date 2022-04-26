@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./pokemonComponent.css";
 import { FaRegHeart, FaHeart, FaArrowCircleLeft } from "react-icons/fa";
 import { GiSpeaker } from "react-icons/gi";
@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function typesTextTransformation(types) {
   const initialValue = "";
+  
 
   const textTypes = types.reduce(
     (previousValue, currentValue, currentIndexOptional) => {
@@ -53,7 +54,6 @@ const PokemonComponent = ({
         <div className="PokemonBody">
           <div className="PokemonName">{name}</div>
           <div className="PokemonTypes">{typesTextTransformation(types)}</div>
-          <>
           {isFavourite ? 
             <button className="favouriteIconDetails" onClick={handleChangeIsUnfavourite}>
               <FaHeart size={28} />
@@ -63,7 +63,6 @@ const PokemonComponent = ({
               <FaRegHeart size={28} />
             </button>
           }
-          </>
           <div className="CpBar"></div>
           <div className="HpBar"></div>
           <div className="PokemonCp">CP: {maxCP}</div>
