@@ -29,7 +29,7 @@ const PokemonComponent = ({
     image,
     name,
     types = [],
-    isFavourite,
+    isFavorite,
     maxCP,
     maxHP,
     weight,
@@ -37,10 +37,8 @@ const PokemonComponent = ({
   },
   handleChangeIsFavourite,
   handleChangeIsUnfavourite,
-  
 }) => {
   const navigate = useNavigate();
-
   return (
     <div className="PokemonComponent">
       <div className="PokemonInfo">
@@ -54,7 +52,7 @@ const PokemonComponent = ({
         <div className="PokemonBody">
           <div className="PokemonName">{name}</div>
           <div className="PokemonTypes">{typesTextTransformation(types)}</div>
-          {isFavourite ? 
+          {isFavorite ? 
             <button className="favouriteIconDetails" onClick={handleChangeIsUnfavourite}>
               <FaHeart size={28} />
             </button>
