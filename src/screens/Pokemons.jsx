@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getPokemos } from "../Api/PokemonApi";
 import Pokemon from "../components/Pokemon";
 import InfiniteScroll from "react-infinite-scroll-component";
+import FilterComponent  from "../components/FilterComponent";
 
 const defaultLimit = 12;
 const offset = 0
@@ -24,6 +25,9 @@ function Pokemons() {
   
   return (
     <div className="Pokemons">
+      <div>
+        <FilterComponent/>
+      </div>
       <InfiniteScroll
         dataLength={pokemons.length}
         next={fetchMoreData}
@@ -33,10 +37,10 @@ function Pokemons() {
         hasMore={true}
         loader={<h4>Loading...</h4>}
         scrollableTarget="scrollableDiv">
-        {pokemons.map((pokemon, index) => (
+       {pokemons.map((pokemon, index) => (
           <Pokemon
             key ={index}
-            id={pokemon.id}
+            id={pokemon.id} 
             image={pokemon.image}
             name={pokemon.name}
             types={pokemon.types}
