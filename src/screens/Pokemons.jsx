@@ -9,15 +9,16 @@ const offset = 0
 
 function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
+  const [query, setQuery] = useState({ limit: defaultLimit, offset: offset , search:""});
 
   useEffect(async () => {
-    const pokemons = await getPokemos({ limit: defaultLimit, offset: offset });
+    const pokemons = await getPokemos(query);
     setPokemons(pokemons);
-  }, []);
+  }, [query]);
 
   async function fetchMoreData() {
     const newPokemons = await getPokemos({
-      limit: defaultLimit,
+      ...query,
       offset: pokemons.length,
     });
     setPokemons([...pokemons, ...newPokemons]);
