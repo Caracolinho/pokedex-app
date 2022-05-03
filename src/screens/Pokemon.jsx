@@ -1,39 +1,43 @@
 import React, { useState, useEffect } from "react";
-import { getPokemon } from "../Api/PokemonApi.js";
+import { useParams } from "react-router-dom";
+import { getPokemon, setFavourite, setUnfavourite } from "../Api/PokemonApi";
 import PokemonComponent from "../components/PokemonComponent";
+import PokemonsEvolution from "../components/PokemonsEvolutions";
 
 function Pokemon() {
-    
-    const [pokemon, setPokemon] = useState(null)
+  const [pokemon, setPokemon] = useState(null);
 
-    useEffect(async () => {
-        const pokemon = await getPokemon("007");
-        setPokemon(pokemon);
-    }, []);
-    if ( !pokemon ){
-      return <div>No pokemons</div>
-    }
+  let { id } = useParams();
 
-    return (
-      <div className="Pokemon">   
-            <PokemonComponent
-              image={pokemon.image}
-              sound={pokemon.sound}
-              name={pokemon.name}
-              types={pokemon.types}
-              isFavourite={pokemon.isFavorite}
-              maxCp={pokemon.maxCp}
-              maxHp={pokemon.maxHp}
-              weight={pokemon.weight}
-              height={pokemon.height}
-            />
-      </div>
-    );
+  useEffect(async () => {
+    const pokemon = await getPokemon(id);
+    setPokemon(pokemon);
+  }, [id]);
+
+  async function onChangeIsFavourite() {
+    const { isFavorite: value } = await setFavourite(id);
+    setPokemon({ ...pokemon, isFavorite: value });
+  }
+
+  async function onChangeIsUnfavourite() {
+    const { isFavorite } = await setUnfavourite(id);
+    setPokemon({ ...pokemon, isFavorite });
+  }
+
+  if (!pokemon) {
+    return <div>No pokemons</div>;
+  }
+
+  return (
+    <div className="Pokemon">
+      <PokemonComponent
+        pokemon={pokemon}
+        handleChangeIsFavourite={onChangeIsFavourite}
+        handleChangeIsUnfavourite={onChangeIsUnfavourite}
+      />
+      <PokemonsEvolution pokemons={pokemon.evolutions} />
+    </div>
+  );
 }
 
 export default Pokemon;
-
-
-// const objet = {name:"juancho"}
-
-// cont array = [{color:"red"},{color:"blue"},{color:"white"}]

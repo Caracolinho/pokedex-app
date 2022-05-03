@@ -7,13 +7,23 @@
     border: lightgrey 1px solid;
     width: 664px;
     margin-left: 11px;
-    height: 657px;
 }
 
 .PokemonImageDetails{
     width: 386px;
     margin-top: 11px;
     margin-left: 140px;
+}
+
+.GoBackButton{
+    position: relative;
+    background-color: green;
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    bottom: 361px;
+    right: 503px;
+    border: none;
 }
 
 .PokemonSound{
@@ -26,7 +36,7 @@
 .PokemonBody{
     background-color:rgb(243, 243, 243);
     height: 247px;
-    margin-top: -61px;
+    position: relative;
 }
 
 .PokemonName{
@@ -45,6 +55,8 @@
     padding-left: 623px;
     position: relative;
     top: -40px;
+    background: none;
+    border: none;
 }
 
 .CpBar{
@@ -91,7 +103,41 @@
     align-content: center;
     border: lightgray 1px solid;
     justify-content: space-evenly;
+    width: 400px;
+    height: 86px;
 }
 
+.MeasureText{
+    position: relative;
+    top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    left: 63px;
+}
 
+.MeasureFrom{
+    position: relative;
+    top: 48px;
+    right: 98px;
+}
 
+.MeasureTo{
+    position: relative;
+    top: 29px;
+    right: 33px;
+}
+
+.PokemonEvolution{
+    position: relative;
+    top: 25px;
+    left: 10px;
+  }
+
+  .PokemonEvolutionText{
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    bottom: 3px;
+  }
+
+  

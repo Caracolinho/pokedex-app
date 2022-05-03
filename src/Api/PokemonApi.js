@@ -55,6 +55,12 @@ function getPokemon(id) {
         minimum
         maximum
       }
+      evolutions{
+        id
+        name
+        image
+        isFavorite
+      }
     }
   }    
       `;
@@ -76,5 +82,56 @@ function getPokemon(id) {
     });
 }
 
+function setFavourite(id) {
+  const pokemonQuery = `
+  mutation setFavourite($id: ID!) {
+    favoritePokemon (id: $id){
+      isFavorite
+      }
+    }
+    `;
 
-export { getPokemos , getPokemon};
+  return window
+     .fetch("http://localhost:4000/graphql", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json;charset=UTF-8",
+      },
+      body: JSON.stringify({
+        query: pokemonQuery,
+        variables:{id},
+      }),
+    })
+    .then((r) => r.json())
+    .then((response) => {
+      return response.data.favoritePokemon;
+    });
+}
+
+function setUnfavourite(id) {
+  const pokemonQuery = `
+    mutation setUnfavourite($id: ID!){
+      unFavoritePokemon (id: $id){
+        isFavorite
+        }
+    }
+    `;
+
+  return window
+     .fetch("http://localhost:4000/graphql", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json;charset=UTF-8",
+      },
+      body: JSON.stringify({
+        query: pokemonQuery,
+        variables:{id},
+      }),
+    })
+    .then((r) => r.json())
+    .then((response) => {
+      return response.data.unFavoritePokemon;
+    });
+}
+
+export { getPokemos , getPokemon , setFavourite , setUnfavourite};

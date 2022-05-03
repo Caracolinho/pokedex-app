@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import "./Pokemon.css";
 
@@ -21,22 +22,26 @@ function isLatest(current, collection) {
   return current + 1 === collection;
 }
 
-const Pokemon = ({ image, name, types, isFavourite }) => {
+const Pokemon = ({ id, image, name, types, isFavourite, showType = true },handleChangeIsFavourite) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="PokemonRow">
+    <div className="PokemonRow" onClick={() => navigate(`/pokemons/${id}`)}>
       <img className="PokemonImage" src={image} />
       <div className="cardFotter">
         <div className="textName">{name}</div>
-        <div className="textType">{typesTextTransformation(types)}</div>
+        {showType ? (
+          <div className="textType">{typesTextTransformation(types)}</div>
+        ) : null}
         {isFavourite ? (
-          <div className="favouriteIcon">
-            <FaHeart />
-          </div>
-        ) : (
-          <div className="favouriteIcon">
-            <FaRegHeart />
-          </div>
-        )}
+          <button className="favouriteIcon">
+              <FaHeart size={20} />
+          </button>
+          ) : (
+            <button className="favouriteIcon">
+              <FaRegHeart size={20} />
+            </button>
+        )} 
       </div>
     </div>
   );
