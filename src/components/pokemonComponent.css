@@ -17,12 +17,13 @@
 
 .GoBackButton{
     position: relative;
-    background-color: royalblue;
+    background-color: green;
     border-radius: 50%;
-    height: 80px;
-    width: 80px;
+    height: 75px;
+    width: 75px;
+    bottom: 361px;
+    right: 503px;
     border: none;
-    bottom: 303px;
 }
 
 .PokemonSound{
