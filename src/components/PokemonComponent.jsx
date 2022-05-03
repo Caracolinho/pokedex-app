@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React  from "react";
 import "./pokemonComponent.css";
 import { FaRegHeart, FaHeart, FaArrowCircleLeft } from "react-icons/fa";
 import { GiSpeaker } from "react-icons/gi";
@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function typesTextTransformation(types) {
   const initialValue = "";
-  
+
 
   const textTypes = types.reduce(
     (previousValue, currentValue, currentIndexOptional) => {
