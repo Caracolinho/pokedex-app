@@ -1,7 +1,7 @@
-function getPokemos({limit , offset}) {
+function getPokemos({limit , offset , search}) {
   const pokemonQuery = `
-        query PokemonsList($limit: Int , $offset: Int){
-            pokemons(query: { limit: $limit, offset: $offset, search: "" }) {
+        query PokemonsList($limit: Int , $offset: Int , $search: String){
+            pokemons(query: { limit: $limit, offset: $offset, search: $search }) {
                 limit
                 offset
                 count
@@ -24,7 +24,7 @@ function getPokemos({limit , offset}) {
       },
       body: JSON.stringify({
         query: pokemonQuery,
-        variables: {limit , offset},
+        variables: {limit , offset , search},
       }),
     })
     .then((r) => r.json())
