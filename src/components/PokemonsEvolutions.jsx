@@ -3,8 +3,8 @@ import "./PokemonEvolutions.css";
 import Pokemon from "./Pokemon";
 
 function PokemonsEvolution({pokemons}) {
-  if(!pokemons){
-    return <div>Not pokemons evolutions</div>
+  if(!pokemons.length){
+    return <div>Doesnt have pokemons evolutions</div>
   }
   return (
     <div className="PokemonsEvolutionContainer">
