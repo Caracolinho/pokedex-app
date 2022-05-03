@@ -1,43 +1,53 @@
-import React from "react";
-
-
+import React , {useState} from "react";
 
 const FilterComponent = () =>{
+
     return (
         <div className="FilterComponent">
-            <div className="TopButtonsStyle">
-                <topButtons
-                    text={"All"}
+            {/* <div className="TopButtonsStyle">
+                <TopButtons
+                    letters={"All"}
                 />
-                <topButtons
-                    text={"Favourites"}
+                <TopButtons
+                    letters={"Favourites"}
                 />
-            </div>
+            </div> */}
             <div className="BottomButtonsStyle">
-                <searchBar/>
+                <SearchBar/>
             </div>
+            {/* <div className="TypeButton">
+                <TypeButton
+                    letters={"Type"}
+                />
+            </div> */}
         </div>
     );
 }
 
 
-function topButtons (text){
+function TopButtons({letters}){
     return (
         <div className="TopButtonsColor">
-           <button className="TopButtonsText">{text}</button> 
+           <button className="TopButtonsText">{letters}</button> 
         </div>
     );
 }
 
-function searchBar (){
+function SearchBar(){
     return(
         <div className="SearchBar">
-            <div className="SearcBox">
-                <div className="SearchIcon"></div>
+            <input className="SearchBox" placeholder="Search"/>
+        </div>   
+    );
+}
 
-            </div>
+function TypeButton({letters}){ 
+    return (
+        <div className="TopButtonsColor">
+           <button className="TopButtonsText">{letters}</button> 
         </div>
     );
+
 }
 
 export default FilterComponent;
