@@ -1,6 +1,6 @@
-import React , {useState} from "react";
+import React     from "react";
 
-const FilterComponent = () =>{
+const FilterComponent = ({searchTerm, onSearchTermChange}) =>{
 
     return (
         <div className="FilterComponent">
@@ -13,7 +13,10 @@ const FilterComponent = () =>{
                 />
             </div> */}
             <div className="BottomButtonsStyle">
-                <SearchBar/>
+                <SearchBar
+                onSearchTermChange={setQuerySerach}
+                searchTerm={searchTerm}
+                />
             </div>
             {/* <div className="TypeButton">
                 <TypeButton
@@ -24,6 +27,12 @@ const FilterComponent = () =>{
     );
 }
 
+function setQuerySerach(){
+    const value = event => setQuery ();
+    return value;
+}
+
+
 
 function TopButtons({letters}){
     return (
@@ -33,10 +42,10 @@ function TopButtons({letters}){
     );
 }
 
-function SearchBar(){
+function SearchBar({searchTerm , onSearchTermChange}){
     return(
         <div className="SearchBar">
-            <input className="SearchBox" placeholder="Search"/>
+            <input className="SearchBox" placeholder="Search" value={searchTerm} onChange={onSearchTermChange} />
         </div>   
     );
 }

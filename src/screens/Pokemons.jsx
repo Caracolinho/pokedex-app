@@ -9,7 +9,7 @@ const offset = 0
 
 function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
-  const [query, setQuery] = useState({ limit: defaultLimit, offset: offset , search:""});
+  const [query, setQuery] = useState({ limit: defaultLimit, offset: offset , search: ""});
 
   useEffect(async () => {
     const pokemons = await getPokemos(query);
@@ -27,7 +27,10 @@ function Pokemons() {
   return (
     <div className="Pokemons">
       <div>
-        <FilterComponent/>
+        <FilterComponent
+        onSearchTermChange={FilterComponent.setQueryChange}
+        searchTerm={query.search}
+        />
       </div>
       <InfiniteScroll
         dataLength={pokemons.length}
