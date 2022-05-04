@@ -1,10 +1,9 @@
-import React     from "react";
+import React from "react";
 
-const FilterComponent = ({searchTerm, onSearchTermChange}) =>{
-
-    return (
-        <div className="FilterComponent">
-            {/* <div className="TopButtonsStyle">
+const FilterComponent = ({ searchTerm, onChange }) => {
+  return (
+    <div className="FilterComponent">
+      {/* <div className="TopButtonsStyle">
                 <TopButtons
                     letters={"All"}
                 />
@@ -12,51 +11,45 @@ const FilterComponent = ({searchTerm, onSearchTermChange}) =>{
                     letters={"Favourites"}
                 />
             </div> */}
-            <div className="BottomButtonsStyle">
-                <SearchBar
-                onSearchTermChange={setQuerySerach}
-                searchTerm={searchTerm}
-                />
-            </div>
-            {/* <div className="TypeButton">
+      <div className="BottomButtonsStyle">
+        <SearchBar onSearchTermChange={onChange} searchTerm={searchTerm} />
+      </div>
+      {/* <div className="TypeButton">
                 <TypeButton
                     letters={"Type"}
                 />
             </div> */}
-        </div>
-    );
+    </div>
+  );
+};
+
+function TopButtons({ letters }) {
+  return (
+    <div className="TopButtonsColor">
+      <button className="TopButtonsText">{letters}</button>
+    </div>
+  );
 }
 
-function setQuerySerach(){
-    const value = event => setQuery ();
-    return value;
+function SearchBar({ searchTerm, onSearchTermChange }) {
+  return (
+    <div className="SearchBar">
+      <input
+        className="SearchBox"
+        placeholder="Search"
+        value={searchTerm}
+        onChange={(event) => onSearchTermChange(event.target.value)}
+      />
+    </div>
+  );
 }
 
-
-
-function TopButtons({letters}){
-    return (
-        <div className="TopButtonsColor">
-           <button className="TopButtonsText">{letters}</button> 
-        </div>
-    );
-}
-
-function SearchBar({searchTerm , onSearchTermChange}){
-    return(
-        <div className="SearchBar">
-            <input className="SearchBox" placeholder="Search" value={searchTerm} onChange={onSearchTermChange} />
-        </div>   
-    );
-}
-
-function TypeButton({letters}){ 
-    return (
-        <div className="TopButtonsColor">
-           <button className="TopButtonsText">{letters}</button> 
-        </div>
-    );
-
+function TypeButton({ letters }) {
+  return (
+    <div className="TopButtonsColor">
+      <button className="TopButtonsText">{letters}</button>
+    </div>
+  );
 }
 
 export default FilterComponent;
