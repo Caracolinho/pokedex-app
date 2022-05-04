@@ -3,22 +3,9 @@ import React from "react";
 const FilterComponent = ({ searchTerm, onChange }) => {
   return (
     <div className="FilterComponent">
-      {/* <div className="TopButtonsStyle">
-                <TopButtons
-                    letters={"All"}
-                />
-                <TopButtons
-                    letters={"Favourites"}
-                />
-            </div> */}
       <div className="BottomButtonsStyle">
         <SearchBar onSearchTermChange={onChange} searchTerm={searchTerm} />
       </div>
-      {/* <div className="TypeButton">
-                <TypeButton
-                    letters={"Type"}
-                />
-            </div> */}
     </div>
   );
 };
