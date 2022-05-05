@@ -152,7 +152,6 @@ function allTypes() {
     })
     .then((r) => r.json())
     .then((response) => {
-      debugger;
       return response.data.pokemonTypes;
     });
 }
