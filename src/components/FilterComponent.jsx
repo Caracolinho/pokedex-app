@@ -1,5 +1,6 @@
 import React , {useState , useEffect} from "react";
 import { allTypes } from "../Api/PokemonApi";
+import "./FilterComponent.css";
 
 
 const FilterComponent = ({ searchTerm, onChange , valueDropDown , onChangeDropDown}) => {
@@ -26,7 +27,7 @@ function TopButtons({ letters }) {
 
 function SearchBar({ searchTerm, onSearchTermChange }) {
   return (
-    <div className="SearchBar">
+    <div>
       <input
         className="SearchBox"
         placeholder="Search"
@@ -54,15 +55,17 @@ function DropDownType({valueDropDown , onChangeDropDown}){
     },[]);
     
     return (
-        <div>
+        <div className="DropDown">
             <h1>{valueDropDown}</h1>
             <select value={valueDropDown} onChange={event=>onChangeDropDown(event.target.value)}>
+            <option value={0} label="Type"/>
               {options.map(type =>{
                   return (
                   <option key={type} value={type}>{type}</option>
                   );
               })}
             </select>
+            <span className="arrow"></span>
         </div>
       );
 }
