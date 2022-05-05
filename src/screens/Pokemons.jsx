@@ -13,8 +13,9 @@ function Pokemons() {
     limit: defaultLimit,
     offset: offset,
     search: "",
+    filter:{}
   });
-  const [select, setSelect] = useState();
+  const [select, setSelect] = useState([]);
 
   useEffect(async () => {
     const pokemons = await getPokemos(query);
@@ -33,6 +34,10 @@ function Pokemons() {
     setQuery({ ...query, search: value });
   }
 
+  function handleTypeChange(value) {
+    setQuery({ ...query, filter: {type:value} });
+  }
+
 
   return (
     <div className="Pokemons">
@@ -41,7 +46,7 @@ function Pokemons() {
           onChange={handleQueryChange}
           searchTerm={query.search}
           valueDropDown={select}
-          onChangeDropDown={setSelect}
+          onChangeDropDown={handleTypeChange}
         />
       </div>
       <InfiniteScroll
