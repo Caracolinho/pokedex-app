@@ -1,30 +1,30 @@
-function getPokemos({limit , offset}) {
+function getPokemos({ limit, offset, search, filter }) {
   const pokemonQuery = `
-        query PokemonsList($limit: Int , $offset: Int){
-            pokemons(query: { limit: $limit, offset: $offset, search: "" }) {
-                limit
-                offset
-                count
-                edges {
-                    id
-                    name
-                    types
-                    isFavorite
-                    image
-                }
-            }
+  query PokemonsList($limit: Int , $offset: Int , $search: String  , $filter: PokemonFilterInput){
+    pokemons(query: { limit: $limit, offset: $offset, search: $search  , filter:$filter}) {
+        limit
+        offset
+        count
+        edges {
+            id
+            name
+            types
+            isFavorite
+            image
         }
+    }
+}
       `;
 
   return window
-     .fetch("http://localhost:4000/graphql", {
+    .fetch("http://localhost:4000/graphql", {
       method: "POST",
       headers: {
         "content-type": "application/json;charset=UTF-8",
       },
       body: JSON.stringify({
         query: pokemonQuery,
-        variables: {limit , offset},
+        variables: { limit, offset, search , filter },
       }),
     })
     .then((r) => r.json())
@@ -66,14 +66,14 @@ function getPokemon(id) {
       `;
 
   return window
-     .fetch("http://localhost:4000/graphql", {
+    .fetch("http://localhost:4000/graphql", {
       method: "POST",
       headers: {
         "content-type": "application/json;charset=UTF-8",
       },
       body: JSON.stringify({
         query: pokemonQuery,
-        variables:{id},
+        variables: { id },
       }),
     })
     .then((r) => r.json())
@@ -92,14 +92,14 @@ function setFavourite(id) {
     `;
 
   return window
-     .fetch("http://localhost:4000/graphql", {
+    .fetch("http://localhost:4000/graphql", {
       method: "POST",
       headers: {
         "content-type": "application/json;charset=UTF-8",
       },
       body: JSON.stringify({
         query: pokemonQuery,
-        variables:{id},
+        variables: { id },
       }),
     })
     .then((r) => r.json())
@@ -118,14 +118,14 @@ function setUnfavourite(id) {
     `;
 
   return window
-     .fetch("http://localhost:4000/graphql", {
+    .fetch("http://localhost:4000/graphql", {
       method: "POST",
       headers: {
         "content-type": "application/json;charset=UTF-8",
       },
       body: JSON.stringify({
         query: pokemonQuery,
-        variables:{id},
+        variables: { id },
       }),
     })
     .then((r) => r.json())
@@ -134,4 +134,26 @@ function setUnfavourite(id) {
     });
 }
 
-export { getPokemos , getPokemon , setFavourite , setUnfavourite};
+function allTypes() {
+  const pokemonQuery = `
+  query{
+    pokemonTypes
+  }
+  `;
+  return window
+    .fetch("http://localhost:4000/graphql", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json;charset=UTF-8",
+      },
+      body: JSON.stringify({
+        query: pokemonQuery,
+      }),
+    })
+    .then((r) => r.json())
+    .then((response) => {
+      return response.data.pokemonTypes;
+    });
+}
+
+export { getPokemos, getPokemon, setFavourite, setUnfavourite, allTypes };

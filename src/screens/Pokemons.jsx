@@ -2,45 +2,65 @@ import React, { useState, useEffect } from "react";
 import { getPokemos } from "../Api/PokemonApi";
 import Pokemon from "../components/Pokemon";
 import InfiniteScroll from "react-infinite-scroll-component";
-import FilterComponent  from "../components/FilterComponent";
+import FilterComponent from "../components/FilterComponent";
 
 const defaultLimit = 12;
-const offset = 0
+const offset = 0;
 
 function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
+  const [query, setQuery] = useState({
+    limit: defaultLimit,
+    offset: offset,
+    search: "",
+    filter:{}
+  });
+  const [select, setSelect] = useState([]);
 
   useEffect(async () => {
-    const pokemons = await getPokemos({ limit: defaultLimit, offset: offset });
+    const pokemons = await getPokemos(query);
     setPokemons(pokemons);
-  }, []);
+  }, [query]);
 
   async function fetchMoreData() {
     const newPokemons = await getPokemos({
-      limit: defaultLimit,
+      ...query,
       offset: pokemons.length,
     });
     setPokemons([...pokemons, ...newPokemons]);
   }
-  
+
+  function handleQueryChange(value) {
+    setQuery({ ...query, search: value });
+  }
+
+  function handleTypeChange(value) {
+    setQuery({ ...query, filter: {type:value} });
+  }
+
+
   return (
     <div className="Pokemons">
       <div>
-        <FilterComponent/>
+        <FilterComponent
+          onChange={handleQueryChange}
+          searchTerm={query.search}
+          valueDropDown={select}
+          onChangeDropDown={handleTypeChange}
+        />
       </div>
       <InfiniteScroll
         dataLength={pokemons.length}
         next={fetchMoreData}
-        style={{display: 'flex',
-            flexWrap: 'wrap',
-            flexDirection: 'row'}}
+        style={{ display: "flex", flexWrap: "wrap", flexDirection: "row" }}
         hasMore={true}
         loader={<h4>Loading...</h4>}
-        scrollableTarget="scrollableDiv">
-       {pokemons.map((pokemon, index) => (
+        scrollableTarget="scrollableDiv"
+      >
+        {pokemons.map((pokemon, index) => (
           <Pokemon
-            key ={index}
-            id={pokemon.id} 
+            key={index}
+            id={pokemon.id}
             image={pokemon.image}
             name={pokemon.name}
             types={pokemon.types}

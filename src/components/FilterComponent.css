@@ -1,26 +1,26 @@
 .FilterComponent{
-
-
+    background-color: white;
+    width: 671px;
+    height: 103px;
+    border: 1px solid lightgray;
 }
 
-.TopButtonsStyle{
-
-
-}
-.TopButtonsColor{
- 
-
-}
-.TopButtonsColor{
-
-}
-.BottomButtonsStyle{
-    
-}
-.SearchBar{
-
-
-}
 .SearchBox{
- 
+    border: none;
+    position: relative;
+    top: 56px;
+    left: 9px;
+    width: 380px;
+    height: 35px;
+    background-color: rgb(211, 211, 211);
+}
+
+select{
+    border: none;
+    background-color: lightgray;
+    position: relative;
+    left: 403px;
+    bottom: 1px;
+    width: 190px;
+    height: 38px;
 }
